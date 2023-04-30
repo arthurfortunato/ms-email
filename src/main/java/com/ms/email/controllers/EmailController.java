@@ -3,13 +3,16 @@ package com.ms.email.controllers;
 import com.ms.email.dtos.EmailDto;
 import com.ms.email.models.EmailModel;
 import com.ms.email.services.EmailService;
-import jakarta.validation.Valid;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import jakarta.validation.Valid;
 
 import java.io.IOException;
 
@@ -18,6 +21,8 @@ public class EmailController {
 
     @Autowired
     EmailService emailService;
+
+    Logger logger = LogManager.getLogger(EmailController.class);
 
     @PostMapping("/sending-email")
     public ResponseEntity<EmailModel> sendingEmail(@ModelAttribute @Valid EmailDto emailDto,

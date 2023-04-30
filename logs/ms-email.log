@@ -1,0 +1,195 @@
+2023-04-30T17:25:21,051 INFO  com.ms.email.MsEmailApplication - Starting MsEmailApplication using Java 17.0.3.1 with PID 4376 (C:\Users\luiza\Desktop\workspace\ms-email\target\classes started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-04-30T17:25:21,088 DEBUG com.ms.email.MsEmailApplication - Running with Spring Boot v3.0.4, Spring v6.0.6
+2023-04-30T17:25:21,090 INFO  com.ms.email.MsEmailApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-30T17:25:22,520 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-30T17:25:22,532 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-30T17:25:22,756 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-30T17:25:22,757 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-04-30T17:25:22,912 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-30T17:25:22,915 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1682 ms
+2023-04-30T17:25:23,520 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-04-30T17:25:23,546 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-30T17:25:23,555 INFO  com.ms.email.MsEmailApplication - Started MsEmailApplication in 3.297 seconds (process running for 4.262)
+2023-04-30T17:42:05,240 INFO  com.ms.email.MsEmailApplication - Starting MsEmailApplication using Java 17.0.3.1 with PID 17732 (C:\Users\luiza\Desktop\workspace\ms-email\target\classes started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-04-30T17:42:05,262 DEBUG com.ms.email.MsEmailApplication - Running with Spring Boot v3.0.4, Spring v6.0.6
+2023-04-30T17:42:05,263 INFO  com.ms.email.MsEmailApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-30T17:42:06,215 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-30T17:42:06,245 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17 ms. Found 0 JPA repository interfaces.
+2023-04-30T17:42:07,028 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-30T17:42:07,038 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-30T17:42:07,039 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-30T17:42:07,040 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-04-30T17:42:07,155 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-30T17:42:07,157 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1815 ms
+2023-04-30T17:42:07,261 WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
+2023-04-30T17:42:07,275 INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2023-04-30T17:42:07,298 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-04-30T17:42:07,328 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2023-04-30T17:42:51,542 INFO  com.ms.email.MsEmailApplicationTests - Starting MsEmailApplicationTests using Java 17.0.3.1 with PID 11728 (started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-04-30T17:42:51,599 DEBUG com.ms.email.MsEmailApplicationTests - Running with Spring Boot v3.0.4, Spring v6.0.6
+2023-04-30T17:42:51,601 INFO  com.ms.email.MsEmailApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2023-04-30T17:42:53,219 INFO  com.ms.email.MsEmailApplicationTests - Started MsEmailApplicationTests in 2.234 seconds (process running for 3.732)
+2023-04-30T17:43:44,149 INFO  com.ms.email.MsEmailApplication - Starting MsEmailApplication using Java 17.0.3.1 with PID 18308 (C:\Users\luiza\Desktop\workspace\ms-email\target\classes started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-04-30T17:43:44,164 DEBUG com.ms.email.MsEmailApplication - Running with Spring Boot v3.0.4, Spring v6.0.6
+2023-04-30T17:43:44,165 INFO  com.ms.email.MsEmailApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-30T17:43:45,072 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-30T17:43:45,106 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 21 ms. Found 0 JPA repository interfaces.
+2023-04-30T17:43:45,908 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-30T17:43:45,925 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-30T17:43:45,926 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-30T17:43:45,926 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-04-30T17:43:46,046 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-30T17:43:46,048 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1810 ms
+2023-04-30T17:43:46,156 WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
+2023-04-30T17:43:46,168 INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2023-04-30T17:43:46,188 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-04-30T17:43:46,216 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2023-04-30T17:44:32,389 INFO  com.ms.email.MsEmailApplication - Starting MsEmailApplication using Java 17.0.3.1 with PID 7720 (C:\Users\luiza\Desktop\workspace\ms-email\target\classes started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-04-30T17:44:32,408 DEBUG com.ms.email.MsEmailApplication - Running with Spring Boot v3.0.4, Spring v6.0.6
+2023-04-30T17:44:32,410 INFO  com.ms.email.MsEmailApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-30T17:44:33,343 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-04-30T17:44:33,387 INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 25 ms. Found 0 JPA repository interfaces.
+2023-04-30T17:44:34,621 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-30T17:44:34,635 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-30T17:44:34,636 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-30T17:44:34,637 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-04-30T17:44:34,751 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-30T17:44:34,753 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2226 ms
+2023-04-30T17:44:34,841 WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'dataSourceScriptDatabaseInitializer' defined in class path resource [org/springframework/boot/autoconfigure/sql/init/DataSourceInitializationConfiguration.class]: Unsatisfied dependency expressed through method 'dataSourceScriptDatabaseInitializer' parameter 0: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
+2023-04-30T17:44:34,852 INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2023-04-30T17:44:34,869 INFO  org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-04-30T17:44:34,897 ERROR org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+2023-04-30T17:53:07,654 INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-04-30T17:53:07,737 INFO  com.ms.email.MsEmailApplicationTests - Starting MsEmailApplicationTests using Java 17.0.3.1 with PID 5316 (started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-04-30T17:53:07,741 DEBUG com.ms.email.MsEmailApplicationTests - Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-30T17:53:07,742 INFO  com.ms.email.MsEmailApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2023-04-30T17:53:10,569 INFO  com.ms.email.MsEmailApplicationTests - Started MsEmailApplicationTests in 3.532 seconds (process running for 5.115)
+2023-04-30T17:54:06,210 INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-04-30T17:54:06,251 INFO  com.ms.email.MsEmailApplicationTests - Starting MsEmailApplicationTests using Java 17.0.3.1 with PID 4652 (started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-04-30T17:54:06,257 DEBUG com.ms.email.MsEmailApplicationTests - Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-04-30T17:54:06,259 INFO  com.ms.email.MsEmailApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2023-04-30T17:54:08,091 INFO  com.ms.email.MsEmailApplicationTests - Started MsEmailApplicationTests in 2.581 seconds (process running for 4.856)
+2023-04-30T17:55:29,375 INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-04-30T17:55:29,416 INFO  com.ms.email.MsEmailApplicationTests - Starting MsEmailApplicationTests using Java 17.0.3.1 with PID 11484 (started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-04-30T17:55:29,423 DEBUG com.ms.email.MsEmailApplicationTests - Running with Spring Boot v3.0.4, Spring v6.0.6
+2023-04-30T17:55:29,425 INFO  com.ms.email.MsEmailApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2023-04-30T17:55:31,721 INFO  com.ms.email.MsEmailApplicationTests - Started MsEmailApplicationTests in 2.865 seconds (process running for 4.438)
+2023-04-30T18:02:02,484 INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-04-30T18:02:02,484 INFO  com.ms.email.MsEmailApplicationTests - Starting MsEmailApplicationTests using Java 17.0.3.1 with PID 11336 (started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-04-30T18:02:02,493 DEBUG com.ms.email.MsEmailApplicationTests - Running with Spring Boot v3.0.4, Spring v6.0.6
+2023-04-30T18:02:02,495 INFO  com.ms.email.MsEmailApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2023-04-30T18:02:04,600 INFO  com.ms.email.MsEmailApplicationTests - Started MsEmailApplicationTests in 2.77 seconds (process running for 5.17)
+2023-04-30T18:03:32,934 INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-04-30T18:03:33,053 INFO  com.ms.email.MsEmailApplication - Starting MsEmailApplication using Java 17.0.3.1 with PID 12584 (C:\Users\luiza\Desktop\workspace\ms-email\target\classes started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-04-30T18:03:33,064 DEBUG com.ms.email.MsEmailApplication - Running with Spring Boot v3.0.4, Spring v6.0.6
+2023-04-30T18:03:33,066 INFO  com.ms.email.MsEmailApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-30T18:03:34,660 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-30T18:03:34,671 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-30T18:03:34,672 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-30T18:03:34,673 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+2023-04-30T18:03:34,783 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-30T18:03:34,787 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1631 ms
+2023-04-30T18:03:35,373 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-04-30T18:03:35,427 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-30T18:03:35,437 INFO  com.ms.email.MsEmailApplication - Started MsEmailApplication in 3.272 seconds (process running for 4.079)
+2023-04-30T18:04:06,890 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-30T18:04:06,891 INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-30T18:04:06,892 INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2023-04-30T18:04:07,099 TRACE com.ms.email.controllers.EmailController - A TRACE Message
+2023-04-30T18:04:07,100 DEBUG com.ms.email.controllers.EmailController - A DEBUG Message
+2023-04-30T18:04:07,101 INFO  com.ms.email.controllers.EmailController - An INFO Message
+2023-04-30T18:04:07,101 WARN  com.ms.email.controllers.EmailController - A WARN Message
+2023-04-30T18:04:07,101 ERROR com.ms.email.controllers.EmailController - An ERROR Message
+2023-04-30T18:04:07,105 INFO  com.ms.email.services.EmailService - Starting sending email
+2023-04-30T18:04:11,144 INFO  com.ms.email.services.EmailService - Finishing sending email
+2023-04-30T18:05:47,000 INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-04-30T18:05:47,146 INFO  com.ms.email.MsEmailApplication - Starting MsEmailApplication using Java 17.0.3.1 with PID 16728 (C:\Users\luiza\Desktop\workspace\ms-email\target\classes started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-04-30T18:05:47,158 DEBUG com.ms.email.MsEmailApplication - Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-04-30T18:05:47,160 INFO  com.ms.email.MsEmailApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-30T18:05:48,777 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-30T18:05:48,791 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-30T18:05:48,793 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-30T18:05:48,793 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-04-30T18:05:48,917 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-30T18:05:48,919 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1583 ms
+2023-04-30T18:05:49,478 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-04-30T18:05:49,509 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-30T18:05:49,527 INFO  com.ms.email.MsEmailApplication - Started MsEmailApplication in 3.165 seconds (process running for 4.006)
+2023-04-30T18:05:59,149 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-04-30T18:05:59,150 INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-04-30T18:05:59,158 INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2023-04-30T18:05:59,349 INFO  com.ms.email.services.EmailService - Starting sending email
+2023-04-30T18:06:04,032 INFO  com.ms.email.services.EmailService - Finishing sending email
+2023-04-30T18:21:07,644 INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-04-30T18:21:07,763 INFO  com.ms.email.MsEmailApplication - Starting MsEmailApplication using Java 17.0.3.1 with PID 12472 (C:\Users\luiza\Desktop\workspace\ms-email\target\classes started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-04-30T18:21:07,773 DEBUG com.ms.email.MsEmailApplication - Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-04-30T18:21:07,775 INFO  com.ms.email.MsEmailApplication - No active profile set, falling back to 1 default profile: "default"
+2023-04-30T18:21:09,597 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-04-30T18:21:09,616 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-04-30T18:21:09,618 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-04-30T18:21:09,619 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-04-30T18:21:09,811 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-04-30T18:21:09,819 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1954 ms
+2023-04-30T18:21:10,450 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-04-30T18:21:10,493 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-04-30T18:21:10,509 INFO  com.ms.email.MsEmailApplication - Started MsEmailApplication in 3.49 seconds (process running for 4.307)
