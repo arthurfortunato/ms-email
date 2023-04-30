@@ -9,8 +9,8 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = "com.ms.email.*")
 public class MsEmailApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(MsEmailApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(MsEmailApplication.class, args);
+    }
 
 }

@@ -31,5 +31,4 @@ public class EmailController {
         emailService.sendEmail(emailModel, attachmentFileName);
         return new ResponseEntity<>(emailModel, HttpStatus.CREATED);
     }
-
 }
