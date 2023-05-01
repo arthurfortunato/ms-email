@@ -12,7 +12,6 @@ public class EmailModel implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
 
-    private Long emailId;
     private String ownerRef;
     private String emailFrom;
     private String emailTo;

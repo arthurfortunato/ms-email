@@ -1,6 +1,7 @@
 package com.ms.email.services;
 
 import com.ms.email.enums.StatusEmail;
+import com.ms.email.exceptions.ValidateException;
 import com.ms.email.models.EmailModel;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -22,7 +23,7 @@ public class EmailService {
 
     private final JavaMailSender emailSender;
 
-    public void sendEmail(EmailModel emailModel, String attachmentFileName) {
+    public void sendEmail(EmailModel emailModel, String attachmentFileName) throws ValidateException {
         logger.info("Starting sending email");
 
         emailModel.setSendDateEmail(LocalDateTime.now());
