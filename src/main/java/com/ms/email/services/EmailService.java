@@ -23,31 +23,42 @@ public class EmailService {
 
     private final JavaMailSender emailSender;
 
-    public void sendEmail(EmailModel emailModel, String attachmentFileName) throws ValidateException {
+    public void sendEmail(EmailModel emailModel, String attachmentFileName, int maxRetries) throws ValidateException {
         logger.info("Starting sending email");
 
         emailModel.setSendDateEmail(LocalDateTime.now());
 
-        MimeMessage message = emailSender.createMimeMessage();
+        int retryCount = 0;
+        boolean emailSent = false;
 
-        try {
-            MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(message, true);
-            mimeMessageHelper.setFrom(emailModel.getEmailFrom());
-            mimeMessageHelper.setTo(emailModel.getEmailTo());
-            mimeMessageHelper.setSubject(emailModel.getSubject());
-            mimeMessageHelper.setText(emailModel.getText(), true);
+        while (!emailSent && retryCount <= maxRetries) {
+            MimeMessage message = emailSender.createMimeMessage();
 
-            if (emailModel.getAttachmentBytes() != null) {
-                ByteArrayResource attachmentResource = new ByteArrayResource(emailModel.getAttachmentBytes());
-                mimeMessageHelper.addAttachment(attachmentFileName, attachmentResource);
+            try {
+                MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(message, true);
+                mimeMessageHelper.setFrom(emailModel.getEmailFrom());
+                mimeMessageHelper.setTo(emailModel.getEmailTo());
+                mimeMessageHelper.setSubject(emailModel.getSubject());
+                mimeMessageHelper.setText(emailModel.getText(), true);
+
+                if (emailModel.getAttachmentBytes() != null) {
+                    ByteArrayResource attachmentResource = new ByteArrayResource(emailModel.getAttachmentBytes());
+                    mimeMessageHelper.addAttachment(attachmentFileName, attachmentResource);
+                }
+
+                emailSender.send(message);
+                emailModel.setStatusEmail(StatusEmail.SENT);
+                emailSent = true;
+                logger.info("Email successfully sent!");
+            } catch (MessagingException e) {
+                emailModel.setStatusEmail(StatusEmail.ERROR);
+                logger.error(">> Error to send email: {}", e.getMessage());
+                retryCount++;
             }
+        }
 
-            emailSender.send(message);
-            emailModel.setStatusEmail(StatusEmail.SENT);
-            logger.info("Email successfully sent!");
-        } catch (MessagingException e) {
-            emailModel.setStatusEmail(StatusEmail.ERROR);
-            logger.error(">> Error to send email: {}", e.getMessage());
+        if (!emailSent) {
+            logger.error(">> Max retry count reached. Email could not be sent.");
         }
 
         logger.info("Finishing sending email");

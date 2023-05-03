@@ -38,7 +38,7 @@ public class EmailController {
             EmailModel emailModel = emailDto.convertToEmailModel();
             String attachmentFileName = attachment.getOriginalFilename();
 
-            emailService.sendEmail(emailModel, attachmentFileName);
+            emailService.sendEmail(emailModel, attachmentFileName, 3);
             return ResponseEntity.status(HttpStatus.CREATED).build();
         } catch (IOException e) {
             logger.error("An error occurred while processing the email: {}", e.getMessage());

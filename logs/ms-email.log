@@ -1684,3 +1684,7 @@ java.lang.IllegalArgumentException: com.ms.email.models.ValidationError@7588d4fc
 2023-05-01T20:50:21,186 DEBUG com.ms.email.MsEmailApplicationTests - Running with Spring Boot v3.0.1, Spring v6.0.3
 2023-05-01T20:50:21,188 INFO  com.ms.email.MsEmailApplicationTests - No active profile set, falling back to 1 default profile: "default"
 2023-05-01T20:50:24,003 INFO  com.ms.email.MsEmailApplicationTests - Started MsEmailApplicationTests in 3.577 seconds (process running for 5.827)
+2023-05-03T13:55:45,155 INFO  com.ms.email.MsEmailApplicationTests - Starting MsEmailApplicationTests using Java 17.0.3.1 with PID 1480 (started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-05-03T13:55:45,207 DEBUG com.ms.email.MsEmailApplicationTests - Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-05-03T13:55:45,209 INFO  com.ms.email.MsEmailApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2023-05-03T13:55:47,443 INFO  com.ms.email.MsEmailApplicationTests - Started MsEmailApplicationTests in 2.97 seconds (process running for 5.296)
