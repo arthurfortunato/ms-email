@@ -16,6 +16,7 @@ public class EmailModel implements Serializable {
     private String emailFrom;
     private String emailTo;
     private String subject;
+    private String copy;
     private byte[] attachmentBytes;
     private String text;
     private LocalDateTime sendDateEmail;

@@ -25,6 +25,9 @@ public class EmailDto {
     @Email
     private String emailTo;
 
+    @Email
+    private String copy;
+
     @NotBlank
     private String subject;
 

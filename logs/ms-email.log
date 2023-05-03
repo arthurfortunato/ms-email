@@ -1688,3 +1688,104 @@ java.lang.IllegalArgumentException: com.ms.email.models.ValidationError@7588d4fc
 2023-05-03T13:55:45,207 DEBUG com.ms.email.MsEmailApplicationTests - Running with Spring Boot v3.0.1, Spring v6.0.3
 2023-05-03T13:55:45,209 INFO  com.ms.email.MsEmailApplicationTests - No active profile set, falling back to 1 default profile: "default"
 2023-05-03T13:55:47,443 INFO  com.ms.email.MsEmailApplicationTests - Started MsEmailApplicationTests in 2.97 seconds (process running for 5.296)
+2023-05-03T14:37:13,868 INFO  com.ms.email.MsEmailApplication - Starting MsEmailApplication using Java 17.0.3.1 with PID 17604 (C:\Users\luiza\Desktop\workspace\ms-email\target\classes started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-05-03T14:37:13,898 DEBUG com.ms.email.MsEmailApplication - Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-05-03T14:37:13,900 INFO  com.ms.email.MsEmailApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-03T14:37:16,162 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-03T14:37:16,192 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-03T14:37:16,194 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-03T14:37:16,194 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-05-03T14:37:16,430 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-03T14:37:16,433 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2452 ms
+2023-05-03T14:37:17,330 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-03T14:37:17,371 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-03T14:37:17,382 INFO  com.ms.email.MsEmailApplication - Started MsEmailApplication in 5.011 seconds (process running for 6.706)
+2023-05-03T14:38:37,869 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-03T14:38:37,869 INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-03T14:38:37,873 INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2023-05-03T14:38:37,970 INFO  com.ms.email.services.EmailService - Starting sending email
+2023-05-03T14:38:42,846 INFO  com.ms.email.services.EmailService - Email successfully sent!
+2023-05-03T14:38:42,846 INFO  com.ms.email.services.EmailService - Finishing sending email
+2023-05-03T14:40:58,985 INFO  com.ms.email.services.EmailService - Starting sending email
+2023-05-03T14:41:02,966 INFO  com.ms.email.services.EmailService - Email successfully sent!
+2023-05-03T14:41:02,967 INFO  com.ms.email.services.EmailService - Finishing sending email
+2023-05-03T14:41:36,502 INFO  com.ms.email.services.EmailService - Starting sending email
+2023-05-03T14:41:36,508 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.IllegalArgumentException: Cc address must not be null] with root cause
+java.lang.IllegalArgumentException: Cc address must not be null
+	at org.springframework.util.Assert.notNull(Assert.java:204) ~[spring-core-6.0.3.jar:6.0.3]
+	at org.springframework.mail.javamail.MimeMessageHelper.setCc(MimeMessageHelper.java:658) ~[spring-context-support-6.0.8.jar:6.0.8]
+	at com.ms.email.services.EmailService.sendEmail(EmailService.java:41) ~[classes/:?]
+	at com.ms.email.controllers.EmailController.sendingEmail(EmailController.java:41) ~[classes/:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1080) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:973) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1010) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:913) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731) ~[tomcat-embed-core-10.1.4.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:884) ~[spring-webmvc-6.0.3.jar:6.0.3]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814) ~[tomcat-embed-core-10.1.4.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.0.3.jar:6.0.3]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-10.1.4.jar:10.1.4]
+	at java.lang.Thread.run(Thread.java:833) ~[?:?]
+2023-05-03T14:42:33,837 INFO  com.ms.email.MsEmailApplication - Starting MsEmailApplication using Java 17.0.3.1 with PID 19396 (C:\Users\luiza\Desktop\workspace\ms-email\target\classes started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-05-03T14:42:33,855 DEBUG com.ms.email.MsEmailApplication - Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-05-03T14:42:33,856 INFO  com.ms.email.MsEmailApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-03T14:42:35,338 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-03T14:42:35,353 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-03T14:42:35,354 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-03T14:42:35,354 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.4]
+2023-05-03T14:42:35,480 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-03T14:42:35,483 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1545 ms
+2023-05-03T14:42:36,020 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-03T14:42:36,062 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-03T14:42:36,074 INFO  com.ms.email.MsEmailApplication - Started MsEmailApplication in 3.081 seconds (process running for 3.982)
+2023-05-03T14:42:52,369 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-05-03T14:42:52,369 INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2023-05-03T14:42:52,370 INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2023-05-03T14:42:52,475 INFO  com.ms.email.services.EmailService - Starting sending email
+2023-05-03T14:42:56,385 INFO  com.ms.email.services.EmailService - Email successfully sent!
+2023-05-03T14:42:56,385 INFO  com.ms.email.services.EmailService - Finishing sending email
+2023-05-03T14:44:21,953 WARN  org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.multipart.support.MissingServletRequestPartException: Required part 'attachment' is not present.]
+2023-05-03T14:45:59,451 INFO  com.ms.email.MsEmailApplicationTests - Starting MsEmailApplicationTests using Java 17.0.3.1 with PID 4528 (started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-05-03T14:45:59,494 DEBUG com.ms.email.MsEmailApplicationTests - Running with Spring Boot v3.0.1, Spring v6.0.3
+2023-05-03T14:45:59,502 INFO  com.ms.email.MsEmailApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2023-05-03T14:46:01,322 INFO  com.ms.email.MsEmailApplicationTests - Started MsEmailApplicationTests in 2.437 seconds (process running for 4.296)

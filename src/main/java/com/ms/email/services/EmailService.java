@@ -41,6 +41,10 @@ public class EmailService {
                 mimeMessageHelper.setSubject(emailModel.getSubject());
                 mimeMessageHelper.setText(emailModel.getText(), true);
 
+                if(emailModel.getCopy() != null) {
+                    mimeMessageHelper.setCc(emailModel.getCopy());
+                }
+
                 if (emailModel.getAttachmentBytes() != null) {
                     ByteArrayResource attachmentResource = new ByteArrayResource(emailModel.getAttachmentBytes());
                     mimeMessageHelper.addAttachment(attachmentFileName, attachmentResource);
