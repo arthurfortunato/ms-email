@@ -1,4 +1,4 @@
 FROM openjdk:17-jdk-slim
 WORKDIR /ms-email
-COPY target/email-1.2.0.jar app.jar
+COPY target/email-2.0.0.jar app.jar
 CMD ["java", "-jar", "app.jar"]
