@@ -1,0 +1,16 @@
+logging:
+  level:
+    com.ms.email: TRACE
+
+spring:
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${USER_GMAIL}
+    password: ${PASSWORD_GMAIL}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true

@@ -4,12 +4,11 @@ import com.ms.email.exceptions.ExceptionCodes;
 import com.ms.email.exceptions.ValidateException;
 import com.ms.email.models.EmailModel;
 import com.ms.email.models.ValidationError;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
-
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 
 @Data
 public class EmailDto {

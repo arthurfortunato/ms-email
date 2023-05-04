@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.validation.Valid;
 import java.io.IOException;
 
 @RestController
@@ -28,17 +27,18 @@ public class EmailController {
     }
 
     @PostMapping("/sending-email")
-    public ResponseEntity<Object> sendingEmail(@Valid EmailDto emailDto, @RequestParam("attachment") MultipartFile attachment) throws ValidateException {
+    public ResponseEntity<Object> sendingEmail(EmailDto emailDto, @RequestParam(value = "attachment", required = false) MultipartFile attachment) throws ValidateException {
 
         try {
             emailDto.validate();
-            if (!attachment.isEmpty()) {
+            if (attachment != null && !attachment.isEmpty()) {
                 emailDto.setAttachmentBytes(attachment.getBytes());
+                String attachmentFileName = attachment.getOriginalFilename();
+                emailService.sendEmail(emailDto.convertToEmailModel(), attachmentFileName, 3);
+            } else {
+                emailService.sendEmail(emailDto.convertToEmailModel(), null, 3);
             }
-            EmailModel emailModel = emailDto.convertToEmailModel();
-            String attachmentFileName = attachment.getOriginalFilename();
 
-            emailService.sendEmail(emailModel, attachmentFileName, 3);
             return ResponseEntity.status(HttpStatus.CREATED).build();
         } catch (IOException e) {
             logger.error("An error occurred while processing the email: {}", e.getMessage());

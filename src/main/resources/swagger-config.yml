@@ -1,0 +1,52 @@
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+  groups:
+    email:
+      packages-to-scan: com.ms.email.controllers
+  info:
+    title: E-mail API
+    version: 2.0.0
+    description: Microservice para envio de email utilizando Spring Email e o servidor SMTP do Gmail.
+  paths:
+    /sending-email:
+      post:
+        tags:
+          - Email
+        summary: Envia um email
+        requestBody:
+          required: true
+          content:
+            multipart/form-data:
+              schema:
+                type: object
+                properties:
+                  ownerRef:
+                    type: string
+                  emailFrom:
+                    type: string
+                    format: email
+                  emailTo:
+                    type: string
+                    format: email
+                  copy:
+                    type: string
+                    format: email
+                  subject:
+                    type: string
+                  text:
+                    type: string
+                  attachment:
+                    type: string
+                    format: binary
+        responses:
+          '201':
+            description: Email enviado com sucesso
+          '400':
+            description: Requisição inválida
+          '500':
+            description: Erro interno no servidor
