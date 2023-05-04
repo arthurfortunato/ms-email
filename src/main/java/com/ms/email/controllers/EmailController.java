@@ -2,7 +2,6 @@ package com.ms.email.controllers;
 
 import com.ms.email.dtos.EmailDto;
 import com.ms.email.exceptions.ValidateException;
-import com.ms.email.models.EmailModel;
 import com.ms.email.services.EmailService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
