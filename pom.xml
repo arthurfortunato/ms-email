@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.ms</groupId>
     <artifactId>email</artifactId>
-    <version>2.0.0</version>
+    <version>2.1.0</version>
     <name>ms-email</name>
     <description>ms email</description>
     <properties>
@@ -84,6 +84,12 @@
             <groupId>io.swagger.core.v3</groupId>
             <artifactId>swagger-annotations</artifactId>
             <version>2.1.10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>4.8.1</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
