@@ -1,6 +1,6 @@
-logs/
 HELP.md
 fly.toml
+logs/
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
