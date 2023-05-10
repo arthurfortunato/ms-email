@@ -9736,3 +9736,22 @@ Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'RA
 2023-05-10T13:45:00,750 INFO  com.ms.email.services.EmailService - Email successfully sent!
 2023-05-10T13:45:00,751 INFO  com.ms.email.services.EmailService - Finishing sending email
 2023-05-10T13:45:00,753 INFO  com.ms.email.services.EmailService - Starting sending email
+2023-05-10T16:30:10,779 INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2023-05-10T16:30:10,876 INFO  com.ms.email.MsEmailApplication - Starting MsEmailApplication using Java 17.0.3.1 with PID 14084 (C:\Users\luiza\Desktop\workspace\ms-email\target\classes started by luiza in C:\Users\luiza\Desktop\workspace\ms-email)
+2023-05-10T16:30:10,890 DEBUG com.ms.email.MsEmailApplication - Running with Spring Boot v3.0.6, Spring v6.0.8
+2023-05-10T16:30:10,896 INFO  com.ms.email.MsEmailApplication - No active profile set, falling back to 1 default profile: "default"
+2023-05-10T16:30:13,339 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2023-05-10T16:30:13,363 INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2023-05-10T16:30:13,364 INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2023-05-10T16:30:13,364 INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-05-10T16:30:13,524 INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2023-05-10T16:30:13,526 INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2505 ms
+2023-05-10T16:30:16,430 INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2023-05-10T16:30:16,467 INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+2023-05-10T16:30:16,473 INFO  org.springframework.amqp.rabbit.connection.CachingConnectionFactory - Attempting to connect to: [jackal.rmq.cloudamqp.com:5671]
+2023-05-10T16:30:16,937 INFO  org.springframework.amqp.rabbit.connection.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#1e721583:0/SimpleConnection@b70fa38 [delegate=amqp://uuyqnjzp@54.207.4.157:5671/uuyqnjzp, localPort=64564]
+2023-05-10T16:30:17,087 INFO  com.ms.email.MsEmailApplication - Started MsEmailApplication in 7.461 seconds (process running for 9.137)
+2023-05-10T16:31:28,084 INFO  com.ms.email.services.EmailService - Starting sending email
+2023-05-10T16:31:32,467 INFO  com.ms.email.services.EmailService - Email successfully sent!
+2023-05-10T16:31:32,467 INFO  com.ms.email.services.EmailService - Finishing sending email
+2023-05-10T16:40:05,524 INFO  org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer - Waiting for workers to finish.

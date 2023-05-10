@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.ms</groupId>
     <artifactId>email</artifactId>
-    <version>2.2.0</version>
+    <version>2.2.1</version>
     <name>ms-email</name>
     <description>ms email</description>
     <properties>

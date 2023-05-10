@@ -17,3 +17,7 @@ spring:
   rabbitmq:
       addresses: ${RABBITMQ_URL}
       queue: ${RABBITMQ_QUEUE}
+      host: ${RABBITMQ_URL}
+      port: 5672
+      username: ${RABBIT_USER}
+      password: ${RABBIT_PASSWORD}
