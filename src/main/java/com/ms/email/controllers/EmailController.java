@@ -2,9 +2,11 @@ package com.ms.email.controllers;
 
 import com.ms.email.dtos.EmailDto;
 import com.ms.email.exceptions.ValidateException;
-import com.ms.email.services.EmailService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -17,13 +19,13 @@ import java.io.IOException;
 @RestController
 public class EmailController {
 
+    @Value("${spring.rabbitmq.queue}")
+    private String queue;
+
+    @Autowired
+    RabbitTemplate rabbitTemplate;
+
     Logger logger = LogManager.getLogger(EmailController.class);
-
-    private final EmailService emailService;
-
-    public EmailController(EmailService emailService) {
-        this.emailService = emailService;
-    }
 
     @PostMapping("/sending-email")
     public ResponseEntity<Object> sendingEmail(EmailDto emailDto, @RequestParam(value = "attachment", required = false) MultipartFile attachment) throws ValidateException {
@@ -33,11 +35,11 @@ public class EmailController {
             if (attachment != null && !attachment.isEmpty()) {
                 emailDto.setAttachmentBytes(attachment.getBytes());
                 String attachmentFileName = attachment.getOriginalFilename();
-                emailService.sendEmail(emailDto.convertToEmailModel(), attachmentFileName, 3);
+                emailDto.setAttachmentName(attachmentFileName);
+                rabbitTemplate.convertAndSend(queue, emailDto);
             } else {
-                emailService.sendEmail(emailDto.convertToEmailModel(), null, 3);
+                rabbitTemplate.convertAndSend(queue, emailDto.convertToEmailModel());
             }
-
             return ResponseEntity.status(HttpStatus.CREATED).build();
         } catch (IOException e) {
             logger.error("An error occurred while processing the email: {}", e.getMessage());
@@ -50,5 +52,4 @@ public class EmailController {
             throw e;
         }
     }
-
 }

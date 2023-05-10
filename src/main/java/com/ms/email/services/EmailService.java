@@ -1,7 +1,6 @@
 package com.ms.email.services;
 
 import com.ms.email.enums.StatusEmail;
-import com.ms.email.exceptions.ValidateException;
 import com.ms.email.models.EmailModel;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
@@ -23,7 +22,7 @@ public class EmailService {
 
     private final JavaMailSender emailSender;
 
-    public void sendEmail(EmailModel emailModel, String attachmentFileName, int maxRetries) throws ValidateException {
+    public void sendEmail(EmailModel emailModel, int maxRetries) {
         logger.info("Starting sending email");
 
         emailModel.setSendDateEmail(LocalDateTime.now());
@@ -41,19 +40,19 @@ public class EmailService {
                 mimeMessageHelper.setSubject(emailModel.getSubject());
                 mimeMessageHelper.setText(emailModel.getText(), true);
 
-                if(emailModel.getCopy() != null) {
+                if (emailModel.getCopy() != null) {
                     mimeMessageHelper.setCc(emailModel.getCopy());
                 }
 
                 if (emailModel.getAttachmentBytes() != null) {
                     ByteArrayResource attachmentResource = new ByteArrayResource(emailModel.getAttachmentBytes());
-                    mimeMessageHelper.addAttachment(attachmentFileName, attachmentResource);
+                    mimeMessageHelper.addAttachment(emailModel.getAttachmentName(), attachmentResource);
                 }
 
                 emailSender.send(message);
                 emailModel.setStatusEmail(StatusEmail.SENT);
                 emailSent = true;
-                logger.info("Email successfully sent!");
+                logger.info("Email Status: " + emailModel.getStatusEmail());
             } catch (MessagingException e) {
                 emailModel.setStatusEmail(StatusEmail.ERROR);
                 logger.error(">> Error to send email: {}", e.getMessage());

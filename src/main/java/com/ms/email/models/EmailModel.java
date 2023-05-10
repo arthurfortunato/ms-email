@@ -21,4 +21,5 @@ public class EmailModel implements Serializable {
     private String text;
     private LocalDateTime sendDateEmail;
     private StatusEmail statusEmail;
+    private String attachmentName;
 }

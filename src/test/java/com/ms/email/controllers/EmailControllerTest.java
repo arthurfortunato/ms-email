@@ -8,6 +8,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
@@ -16,11 +17,11 @@ import static org.mockito.Mockito.*;
 @ExtendWith(MockitoExtension.class)
 class EmailControllerTest {
 
-    @Mock
-    private EmailService emailService;
-
     @InjectMocks
     private EmailController emailController;
+
+    @Mock
+    RabbitTemplate rabbitTemplate;
 
     @Test
     public void shouldSendingEmail() throws ValidateException {
@@ -33,6 +34,6 @@ class EmailControllerTest {
 
         ResponseEntity<Object> responseEntity = emailController.sendingEmail(emailDto, null);
         assert responseEntity.getStatusCode() == HttpStatus.CREATED;
-        verify(emailService, times(1)).sendEmail(eq(emailDto.convertToEmailModel()), eq(null), eq(3));
+        verify(rabbitTemplate, times(1)).convertAndSend(null, emailDto.convertToEmailModel());
     }
 }

@@ -10,6 +10,9 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -23,11 +26,11 @@ import java.io.IOException;
 @RestController
 public class Swagger {
 
-    private final EmailService emailService;
+    @Value("${spring.rabbitmq.queue}")
+    private String queue;
 
-    public Swagger(EmailService emailService) {
-        this.emailService = emailService;
-    }
+    @Autowired
+    RabbitTemplate rabbitTemplate;
 
     @PostMapping(value = "/swagger/sending-email", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Operation(summary = "Send Email")
@@ -62,9 +65,10 @@ public class Swagger {
             if (attachment != null && !attachment.isEmpty()) {
                 emailDto.setAttachmentBytes(attachment.getBytes());
                 String attachmentFileName = attachment.getOriginalFilename();
-                emailService.sendEmail(emailDto.convertToEmailModel(), attachmentFileName, 3);
+                emailDto.setAttachmentName(attachmentFileName);
+                rabbitTemplate.convertAndSend(queue, emailDto);
             } else {
-                emailService.sendEmail(emailDto.convertToEmailModel(), null, 3);
+                rabbitTemplate.convertAndSend(queue, emailDto.convertToEmailModel());
             }
 
             return ResponseEntity.status(HttpStatus.CREATED).build();

@@ -36,7 +36,7 @@ public class EmailServiceTest {
         MimeMessage mimeMessage = mock(MimeMessage.class);
 
         when(emailSender.createMimeMessage()).thenReturn(mimeMessage);
-        emailService.sendEmail(emailModel, "testAttachment.txt", 3);
+        emailService.sendEmail(emailModel, 3);
 
         verify(emailSender, times(1)).send(mimeMessage);
         assert (emailModel.getStatusEmail() == StatusEmail.SENT);
@@ -50,7 +50,7 @@ public class EmailServiceTest {
         emailModel.setSubject(null);
         emailModel.setText(null);
 
-        assertThrows(NullPointerException.class, () -> emailService.sendEmail(emailModel, "testAttachment.txt", 3));
+        assertThrows(NullPointerException.class, () -> emailService.sendEmail(emailModel, 3));
         verify(emailSender, never()).send(any(MimeMessage.class));
     }
 }

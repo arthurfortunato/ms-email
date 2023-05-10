@@ -35,6 +35,8 @@ public class EmailDto {
 
     private byte[] attachmentBytes;
 
+    private String attachmentName;
+
     public EmailModel convertToEmailModel() {
         var emailModel = new EmailModel();
         BeanUtils.copyProperties(this, emailModel);

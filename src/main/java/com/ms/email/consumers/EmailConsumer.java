@@ -2,27 +2,22 @@ package com.ms.email.consumers;
 
 import com.ms.email.dtos.EmailDto;
 import com.ms.email.exceptions.ValidateException;
-import com.ms.email.models.EmailModel;
 import com.ms.email.services.EmailService;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
-
-import java.util.Arrays;
 
 @Component
 public class EmailConsumer {
 
-    @Autowired
-    EmailService emailService;
+    private final EmailService emailService;
+
+    public EmailConsumer(EmailService emailService) {
+        this.emailService = emailService;
+    }
 
     @RabbitListener(queues = "${spring.rabbitmq.queue}")
     public void listen(@Payload EmailDto emailDto) throws ValidateException {
-        EmailModel emailModel = new EmailModel();
-        BeanUtils.copyProperties(emailDto, emailModel);
-        emailService.sendEmail(emailModel, Arrays.toString(emailDto.getAttachmentBytes()), 3);
-        System.out.println("Email Status: " + emailModel.getStatusEmail().toString());
+        emailService.sendEmail(emailDto.convertToEmailModel(), 3);
     }
 }
