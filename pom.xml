@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.ms</groupId>
     <artifactId>email</artifactId>
-    <version>2.2.2</version>
+    <version>2.3.0</version>
     <name>ms-email</name>
     <description>ms email</description>
     <properties>
@@ -100,6 +100,15 @@
             <artifactId>mockito-junit-jupiter</artifactId>
             <version>4.8.1</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.thymeleaf</groupId>
+            <artifactId>thymeleaf-spring6</artifactId>
+            <version>3.1.1.RELEASE</version>
         </dependency>
     </dependencies>
 

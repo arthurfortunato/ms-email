@@ -14,10 +14,16 @@ spring:
           auth: true
           starttls:
             enable: true
+
+  thymeleaf:
+    mode: HTML
+
   rabbitmq:
-      addresses: ${RABBITMQ_URL}
-      queue: ${RABBITMQ_QUEUE}
-      host: ${RABBITMQ_URL}
-      port: 5672
-      username: ${RABBIT_USER}
-      password: ${RABBIT_PASSWORD}
+    addresses: ${RABBITMQ_URL}
+    queues:
+      email: ${RABBITMQ_QUEUE_EMAIL}
+      welcome: ${RABBITMQ_QUEUE_WELCOME}
+    host: ${RABBITMQ_URL}
+    port: 5672
+    username: ${RABBIT_USER}
+    password: ${RABBIT_PASSWORD}

@@ -47,7 +47,7 @@ public class EmailDtoTest {
     }
 
     @Test
-    public void shouldThrowBadRequestOwner(){
+    public void shouldThrowBadRequestOwner() {
         EmailDto emailDto = new EmailDto();
         emailDto.setOwnerRef("");
         emailDto.setEmailFrom("test@test.com");
@@ -60,7 +60,7 @@ public class EmailDtoTest {
     }
 
     @Test
-    public void shouldThrowBadRequestEmailFrom(){
+    public void shouldThrowBadRequestEmailFrom() {
         EmailDto emailDto = new EmailDto();
         emailDto.setOwnerRef("ownerRef");
         emailDto.setEmailFrom("");
@@ -73,7 +73,7 @@ public class EmailDtoTest {
     }
 
     @Test
-    public void shouldThrowBadRequestEmailTo(){
+    public void shouldThrowBadRequestEmailTo() {
         EmailDto emailDto = new EmailDto();
         emailDto.setOwnerRef("ownerRef");
         emailDto.setEmailFrom("test@test.com");
@@ -86,7 +86,7 @@ public class EmailDtoTest {
     }
 
     @Test
-    public void shouldThrowBadRequestSubject(){
+    public void shouldThrowBadRequestSubject() {
         EmailDto emailDto = new EmailDto();
         emailDto.setOwnerRef("ownerRef");
         emailDto.setEmailFrom("test@test.com");
@@ -96,18 +96,5 @@ public class EmailDtoTest {
 
         ValidateException exception = assertThrows(ValidateException.class, emailDto::validate);
         assertEquals(ValidationError.getFrom(ExceptionCodes.BAD_REQUEST_SUBJECT).getMessage(), exception.getMessage());
-    }
-
-    @Test
-    public void shouldThrowBadRequestMessage(){
-        EmailDto emailDto = new EmailDto();
-        emailDto.setOwnerRef("ownerRef");
-        emailDto.setEmailFrom("test@test.com");
-        emailDto.setEmailTo("recipient@test.com");
-        emailDto.setSubject("Test email");
-        emailDto.setText("");
-
-        ValidateException exception = assertThrows(ValidateException.class, emailDto::validate);
-        assertEquals(ValidationError.getFrom(ExceptionCodes.BAD_REQUEST_MESSAGE).getMessage(), exception.getMessage());
     }
 }

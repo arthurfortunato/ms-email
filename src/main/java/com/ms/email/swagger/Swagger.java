@@ -26,7 +26,7 @@ import java.io.IOException;
 @RestController
 public class Swagger {
 
-    @Value("${spring.rabbitmq.queue}")
+    @Value("${spring.rabbitmq.queues.email}")
     private String queue;
 
     @Autowired

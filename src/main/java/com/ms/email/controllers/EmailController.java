@@ -19,8 +19,11 @@ import java.io.IOException;
 @RestController
 public class EmailController {
 
-    @Value("${spring.rabbitmq.queue}")
-    private String queue;
+    @Value("${spring.rabbitmq.queues.email}")
+    private String queueEmail;
+
+    @Value("${spring.rabbitmq.queues.welcome}")
+    private String queueWelcome;
 
     @Autowired
     RabbitTemplate rabbitTemplate;
@@ -28,7 +31,10 @@ public class EmailController {
     Logger logger = LogManager.getLogger(EmailController.class);
 
     @PostMapping("/sending-email")
-    public ResponseEntity<Object> sendingEmail(EmailDto emailDto, @RequestParam(value = "attachment", required = false) MultipartFile attachment) throws ValidateException {
+    public ResponseEntity<Object> sendingEmail(EmailDto emailDto,
+                                               @RequestParam(value = "attachment", required = false)
+                                               MultipartFile attachment)
+            throws ValidateException {
 
         try {
             emailDto.validate();
@@ -36,14 +42,29 @@ public class EmailController {
                 emailDto.setAttachmentBytes(attachment.getBytes());
                 String attachmentFileName = attachment.getOriginalFilename();
                 emailDto.setAttachmentName(attachmentFileName);
-                rabbitTemplate.convertAndSend(queue, emailDto);
+                rabbitTemplate.convertAndSend(queueEmail, emailDto);
             } else {
-                rabbitTemplate.convertAndSend(queue, emailDto.convertToEmailModel());
+                rabbitTemplate.convertAndSend(queueEmail, emailDto.convertToEmailModel());
             }
             return ResponseEntity.status(HttpStatus.CREATED).build();
         } catch (IOException e) {
             logger.error("An error occurred while processing the email: {}", e.getMessage());
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error processing email");
+        } catch (ValidateException e) {
+            logger.error("Validation error occurred: {}", e.getMessage());
+            if (e.getMessage().contains("BAD REQUEST")) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            }
+            throw e;
+        }
+    }
+
+    @PostMapping("/welcome-email")
+    public ResponseEntity<Object> sendingEmailWelcome(EmailDto emailDto) throws ValidateException {
+        try {
+            emailDto.validate();
+            rabbitTemplate.convertAndSend(queueWelcome, emailDto.convertToEmailModel());
+            return ResponseEntity.status(HttpStatus.CREATED).build();
         } catch (ValidateException e) {
             logger.error("Validation error occurred: {}", e.getMessage());
             if (e.getMessage().contains("BAD REQUEST")) {

@@ -30,7 +30,6 @@ public class EmailDto {
     @NotBlank
     private String subject;
 
-    @NotBlank
     private String text;
 
     private byte[] attachmentBytes;
@@ -55,9 +54,6 @@ public class EmailDto {
         }
         if (StringUtils.isBlank(this.subject)) {
             throw new ValidateException(ValidationError.getFrom(ExceptionCodes.BAD_REQUEST_SUBJECT));
-        }
-        if (StringUtils.isBlank(this.text)) {
-            throw new ValidateException(ValidationError.getFrom(ExceptionCodes.BAD_REQUEST_MESSAGE));
         }
     }
 }
