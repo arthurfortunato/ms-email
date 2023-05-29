@@ -15,6 +15,9 @@ public class RabbitMQConfig {
     @Value("${spring.rabbitmq.queues.welcome}")
     private String welcome;
 
+    @Value("${spring.rabbitmq.queues.recovery}")
+    private String recovery;
+
     @Bean
     public Queue queueEmail() {
         return new Queue(email, true);
@@ -23,6 +26,11 @@ public class RabbitMQConfig {
     @Bean
     public Queue queueWelcome() {
         return new Queue(welcome, true);
+    }
+
+    @Bean
+    public Queue queueRecovery() {
+        return new Queue(recovery, true);
     }
 
     @Bean

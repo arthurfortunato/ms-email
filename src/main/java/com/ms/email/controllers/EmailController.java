@@ -25,6 +25,9 @@ public class EmailController {
     @Value("${spring.rabbitmq.queues.welcome}")
     private String queueWelcome;
 
+    @Value("${spring.rabbitmq.queues.recovery}")
+    private String queueRecovery;
+
     @Autowired
     RabbitTemplate rabbitTemplate;
 
@@ -64,6 +67,21 @@ public class EmailController {
         try {
             emailDto.validate();
             rabbitTemplate.convertAndSend(queueWelcome, emailDto.convertToEmailModel());
+            return ResponseEntity.status(HttpStatus.CREATED).build();
+        } catch (ValidateException e) {
+            logger.error("Validation error occurred: {}", e.getMessage());
+            if (e.getMessage().contains("BAD REQUEST")) {
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
+            }
+            throw e;
+        }
+    }
+
+    @PostMapping("/recovery-password")
+    public ResponseEntity<Object> sendingEmailRecoveryPassword(EmailDto emailDto) throws ValidateException {
+        try {
+            emailDto.validate();
+            rabbitTemplate.convertAndSend(queueRecovery, emailDto.convertToEmailModel());
             return ResponseEntity.status(HttpStatus.CREATED).build();
         } catch (ValidateException e) {
             logger.error("Validation error occurred: {}", e.getMessage());

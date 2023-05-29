@@ -23,6 +23,7 @@ spring:
     queues:
       email: ${RABBITMQ_QUEUE_EMAIL}
       welcome: ${RABBITMQ_QUEUE_WELCOME}
+      recovery: ${RABBITMQ_QUEUE_RECOVERY}
     host: ${RABBITMQ_URL}
     port: 5672
     username: ${RABBIT_USER}

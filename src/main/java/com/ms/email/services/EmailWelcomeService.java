@@ -38,7 +38,8 @@ public class EmailWelcomeService {
         while (!emailSent && retryCount <= maxRetries) {
             MimeMessage message = emailSender.createMimeMessage();
             Context context = new Context();
-            String content = templateEngine.process("SendWelcome", context);
+            context.setVariable("message", emailModel.getText());
+            String content = templateEngine.process("SendCodeVerification", context);
 
             try {
                 MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(message, true);
